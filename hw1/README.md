@@ -10,7 +10,6 @@ hw1/
 ├── equations.py              # flops(), memory(), bytes_moved(), latency(), energy() - numpy, без torch
 ├── measure.py                # замеры на GPU (latency / peak memory / energy / OOM)
 ├── calibrate.py              # подгонка θ по базовой сетке, проверка на отложенных точках
-├── plots.py                  # все графики: измерения + предсказанные кривые/поверхности
 ├── build_notebook.py         # собирает ../notebook.ipynb из исходников (для Colab)
 ├── extract_from_notebook.py  # достает results/*.csv|json из выводов выполненного ноутбука
 └── results/
@@ -34,7 +33,6 @@ pip install torch numpy scipy pandas matplotlib nvidia-ml-py
 cd hw1
 python measure.py --out results      # нужен GPU
 python calibrate.py --results results
-python plots.py --results results    # calibrate/plots работают и без GPU
 ```
 
 Флаги (одинаковые во всех запусках): `cudnn.benchmark=False`, `cudnn.allow_tf32=False`,
