@@ -1,0 +1,16 @@
+pair,metric,spearman,pearson
+R8 / R8,forgetting,0.725877,0.703937
+R8 / R8,entropy,0.870152,0.820172
+R8 / R8,k-centers,0.481966,0.481966
+R8 / R20,forgetting,0.691532,0.632332
+R8 / R20,entropy,0.785492,0.662603
+R8 / R20,k-centers,0.281670,0.281670
+R8 / R56,forgetting,0.673520,0.606677
+R8 / R56,entropy,0.753532,0.590888
+R8 / R56,k-centers,0.247900,0.247900
+R20 / R56,forgetting,0.743841,0.729042
+R20 / R56,entropy,0.858631,0.743867
+R20 / R56,k-centers,0.461717,0.461717
+R56 early / R56,forgetting,0.828290,0.738950
+R56 early / R56,entropy,0.612047,0.434276
+R56 early / R56,k-centers,0.259031,0.259031

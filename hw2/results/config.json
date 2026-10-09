@@ -1,0 +1,10 @@
+{
+  "epochs": 30,
+  "snapshot_epoch": 10,
+  "fraction": 0.5,
+  "seed": 0,
+  "synthetic": false,
+  "synthetic_n": 0,
+  "batch_size": 128,
+  "subsample": 2000
+}

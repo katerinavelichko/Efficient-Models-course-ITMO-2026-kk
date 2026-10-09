@@ -1,0 +1,4 @@
+method,budget_frac,n_labeled,test_acc,test_error,select_seconds,target_seconds
+random,0.200000,10000,0.763200,0.236800,0.000000,155.571343
+oracle_least_confidence,0.200000,10000,0.769900,0.230100,91.518452,156.043658
+svp_least_confidence,0.200000,10000,0.771900,0.228100,90.181205,156.554310

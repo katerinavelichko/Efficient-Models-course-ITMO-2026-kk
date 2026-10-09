@@ -1,0 +1,262 @@
+{
+  "env": {
+    "torch": "1.10.2+cu111",
+    "gpu": "NVIDIA A100 80GB PCIe",
+    "cuda": true
+  },
+  "config": {
+    "epochs": 30,
+    "snapshot_epoch": 10,
+    "fraction": 0.5,
+    "seed": 0,
+    "synthetic": false,
+    "synthetic_n": 0,
+    "batch_size": 128,
+    "subsample": 2000
+  },
+  "params": {
+    "preact8": 77850,
+    "preact20": 272282,
+    "preact56": 855578
+  },
+  "ranking": {
+    "preact8_s0": {
+      "arch": "preact8",
+      "seed": 0,
+      "test_acc": 0.8381,
+      "seconds": 831.0672118910588,
+      "clean_acc": 0.86516,
+      "never_learned": 0.022,
+      "params": 77850,
+      "has_early": false
+    },
+    "preact8_s1": {
+      "arch": "preact8",
+      "seed": 1,
+      "test_acc": 0.8306,
+      "seconds": 829.1335532059893,
+      "clean_acc": 0.85884,
+      "never_learned": 0.02244,
+      "params": 77850,
+      "has_early": false
+    },
+    "preact20_s0": {
+      "arch": "preact20",
+      "seed": 0,
+      "test_acc": 0.8882,
+      "seconds": 835.4891548659652,
+      "clean_acc": 0.93174,
+      "never_learned": 0.00872,
+      "params": 272282,
+      "has_early": false
+    },
+    "preact56_s0": {
+      "arch": "preact56",
+      "seed": 0,
+      "test_acc": 0.902,
+      "seconds": 858.8147305059247,
+      "clean_acc": 0.9497,
+      "never_learned": 0.00598,
+      "params": 855578,
+      "has_early": true,
+      "test_acc_early": 0.745,
+      "never_learned_early": 0.03872,
+      "clean_acc_early": 0.76054
+    },
+    "preact56_early": {
+      "test_acc": 0.745,
+      "never_learned": 0.03872,
+      "seconds": 0.0
+    }
+  },
+  "correlations": [
+    {
+      "pair": "R8 / R8",
+      "metric": "forgetting",
+      "spearman": "0.725877",
+      "pearson": "0.703937"
+    },
+    {
+      "pair": "R8 / R8",
+      "metric": "entropy",
+      "spearman": "0.870152",
+      "pearson": "0.820172"
+    },
+    {
+      "pair": "R8 / R8",
+      "metric": "k-centers",
+      "spearman": "0.481966",
+      "pearson": "0.481966"
+    },
+    {
+      "pair": "R8 / R20",
+      "metric": "forgetting",
+      "spearman": "0.691532",
+      "pearson": "0.632332"
+    },
+    {
+      "pair": "R8 / R20",
+      "metric": "entropy",
+      "spearman": "0.785492",
+      "pearson": "0.662603"
+    },
+    {
+      "pair": "R8 / R20",
+      "metric": "k-centers",
+      "spearman": "0.281670",
+      "pearson": "0.281670"
+    },
+    {
+      "pair": "R8 / R56",
+      "metric": "forgetting",
+      "spearman": "0.673520",
+      "pearson": "0.606677"
+    },
+    {
+      "pair": "R8 / R56",
+      "metric": "entropy",
+      "spearman": "0.753532",
+      "pearson": "0.590888"
+    },
+    {
+      "pair": "R8 / R56",
+      "metric": "k-centers",
+      "spearman": "0.247900",
+      "pearson": "0.247900"
+    },
+    {
+      "pair": "R20 / R56",
+      "metric": "forgetting",
+      "spearman": "0.743841",
+      "pearson": "0.729042"
+    },
+    {
+      "pair": "R20 / R56",
+      "metric": "entropy",
+      "spearman": "0.858631",
+      "pearson": "0.743867"
+    },
+    {
+      "pair": "R20 / R56",
+      "metric": "k-centers",
+      "spearman": "0.461717",
+      "pearson": "0.461717"
+    },
+    {
+      "pair": "R56 early / R56",
+      "metric": "forgetting",
+      "spearman": "0.828290",
+      "pearson": "0.738950"
+    },
+    {
+      "pair": "R56 early / R56",
+      "metric": "entropy",
+      "spearman": "0.612047",
+      "pearson": "0.434276"
+    },
+    {
+      "pair": "R56 early / R56",
+      "metric": "k-centers",
+      "spearman": "0.259031",
+      "pearson": "0.259031"
+    }
+  ],
+  "coreset": [
+    {
+      "method": "full",
+      "fraction": "1.000000",
+      "n_subset": "50000",
+      "test_acc": "0.902000",
+      "test_error": "0.098000",
+      "train_seconds": "858.814731"
+    },
+    {
+      "method": "random",
+      "fraction": "0.500000",
+      "n_subset": "25000",
+      "test_acc": "0.862600",
+      "test_error": "0.137400",
+      "train_seconds": "383.523665"
+    },
+    {
+      "method": "forget_preact8",
+      "fraction": "0.500000",
+      "n_subset": "25000",
+      "test_acc": "0.871000",
+      "test_error": "0.129000",
+      "train_seconds": "382.384153"
+    },
+    {
+      "method": "forget_preact56",
+      "fraction": "0.500000",
+      "n_subset": "25000",
+      "test_acc": "0.871900",
+      "test_error": "0.128100",
+      "train_seconds": "383.276805"
+    },
+    {
+      "method": "forget_preact56_early",
+      "fraction": "0.500000",
+      "n_subset": "25000",
+      "test_acc": "0.869900",
+      "test_error": "0.130100",
+      "train_seconds": "383.569100"
+    },
+    {
+      "method": "entropy_preact8",
+      "fraction": "0.500000",
+      "n_subset": "25000",
+      "test_acc": "0.876900",
+      "test_error": "0.123100",
+      "train_seconds": "383.153303"
+    }
+  ],
+  "active": [
+    {
+      "method": "random",
+      "budget_frac": "0.200000",
+      "n_labeled": "10000",
+      "test_acc": "0.763200",
+      "test_error": "0.236800",
+      "select_seconds": "0.000000",
+      "target_seconds": "155.571343"
+    },
+    {
+      "method": "oracle_least_confidence",
+      "budget_frac": "0.200000",
+      "n_labeled": "10000",
+      "test_acc": "0.769900",
+      "test_error": "0.230100",
+      "select_seconds": "91.518452",
+      "target_seconds": "156.043658"
+    },
+    {
+      "method": "svp_least_confidence",
+      "budget_frac": "0.200000",
+      "n_labeled": "10000",
+      "test_acc": "0.771900",
+      "test_error": "0.228100",
+      "select_seconds": "90.181205",
+      "target_seconds": "156.554310"
+    }
+  ],
+  "end_to_end": {
+    "full_seconds": 858.814731,
+    "proxy_seconds": 831.0672118910588,
+    "subset_seconds": 382.384153,
+    "svp_seconds": 1213.4513648910588,
+    "speedup_vs_training_on_all_data": 0.707745490135159,
+    "active_oracle_select_seconds": 91.518452,
+    "active_svp_select_seconds": 90.181205,
+    "active_selection_speedup": 1.0148284445744542
+  },
+  "paper_reference": {
+    "fig3_forgetting_spearman_r20_vs_r164": 0.9,
+    "table3_cifar10_least_confidence_error_at_20pct": {
+      "random": 12.9,
+      "resnet164": 10.4,
+      "resnet20_proxy": 10.5
+    },
+    "note": "Those numbers are ResNet-164, 181 epochs, 3-5 seeds. This run is not expected to match them absolutely."
+  }
+}
